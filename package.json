@@ -1,0 +1,7 @@
+{
+  "name": "kuaishou-mt",
+  "version": "1.0.0",
+  "main": "collector.js",
+  "scripts": { "start": "node collector.js" },
+  "dependencies": { "redis": "^4.6.0" }
+}
