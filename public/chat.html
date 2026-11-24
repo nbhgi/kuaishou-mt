@@ -1,0 +1,41 @@
+<!-- language: html / file: public/chat.html / runtime: 浏览器 -->
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>私信</title>
+<style>
+  :root{--bg:#f5f6f8;--me:#ff5b26;--them:#fff;--txt:#1c1d22}
+  *{box-sizing:border-box}
+  body{margin:0;font:15px/1.55 -apple-system,PingFang SC,sans-serif;
+       background:var(--bg);color:var(--txt);height:100dvh;display:flex;flex-direction:column}
+  header{padding:12px 16px;background:#fff;border-bottom:1px solid #e6e7ea;
+         font-weight:600;display:flex;align-items:center;gap:8px}
+  header .dot{width:8px;height:8px;border-radius:50%;background:#3ece6a}
+  #log{flex:1;overflow-y:auto;padding:14px 12px 8px;display:flex;flex-direction:column;gap:10px}
+  .row{display:flex;max-width:78%}
+  .row.me{align-self:flex-end;justify-content:flex-end}
+  .bub{padding:9px 12px;border-radius:14px;background:var(--them);
+       box-shadow:0 1px 2px rgba(0,0,0,.06);word-break:break-word}
+  .row.me .bub{background:var(--me);color:#fff}
+  .time{font-size:11px;color:#9a9ba1;margin-top:3px;text-align:right}
+  footer{padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+         background:#fff;border-top:1px solid #e6e7ea;display:flex;gap:8px}
+  #inp{flex:1;border:1px solid #dcdde1;border-radius:20px;padding:10px 14px;
+       font:inherit;outline:none;resize:none;max-height:96px}
+  #go{background:var(--me);color:#fff;border:0;border-radius:20px;
+      padding:0 18px;font:inherit;font-weight:600}
+  .sys{align-self:center;font-size:12px;color:#9a9ba1}
+</style>
+</head>
+<body>
+<header><span class="dot"></span><span>在线客服</span></header>
+<div id="log"><div class="sys">会话已建立</div></div>
+<footer>
+  <textarea id="inp" rows="1" placeholder="输入消息…"></textarea>
+  <button id="go">发送</button>
+</footer>
+<script src="/public/collector.js" defer></script>
+</body>
+</html>
